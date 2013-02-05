@@ -3,73 +3,73 @@
 
 package com.torm.domain;
 
-import com.torm.domain.Transaction;
+import com.torm.domain.Admin;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import org.springframework.transaction.annotation.Transactional;
 
-privileged aspect Transaction_Roo_Jpa_ActiveRecord {
+privileged aspect Admin_Roo_Jpa_ActiveRecord {
     
     @PersistenceContext
-    transient EntityManager Transaction.entityManager;
+    transient EntityManager Admin.entityManager;
     
-    public static final EntityManager Transaction.entityManager() {
-        EntityManager em = new Transaction().entityManager;
+    public static final EntityManager Admin.entityManager() {
+        EntityManager em = new Admin().entityManager;
         if (em == null) throw new IllegalStateException("Entity manager has not been injected (is the Spring Aspects JAR configured as an AJC/AJDT aspects library?)");
         return em;
     }
     
-    public static long Transaction.countTransactions() {
-        return entityManager().createQuery("SELECT COUNT(o) FROM Transaction o", Long.class).getSingleResult();
+    public static long Admin.countAdmins() {
+        return entityManager().createQuery("SELECT COUNT(o) FROM Admin o", Long.class).getSingleResult();
     }
     
-    public static List<Transaction> Transaction.findAllTransactions() {
-        return entityManager().createQuery("SELECT o FROM Transaction o", Transaction.class).getResultList();
+    public static List<Admin> Admin.findAllAdmins() {
+        return entityManager().createQuery("SELECT o FROM Admin o", Admin.class).getResultList();
     }
     
-    public static Transaction Transaction.findTransaction(Long id) {
-        if (id == null) return null;
-        return entityManager().find(Transaction.class, id);
+    public static Admin Admin.findAdmin(Long id_) {
+        if (id_ == null) return null;
+        return entityManager().find(Admin.class, id_);
     }
     
-    public static List<Transaction> Transaction.findTransactionEntries(int firstResult, int maxResults) {
-        return entityManager().createQuery("SELECT o FROM Transaction o", Transaction.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+    public static List<Admin> Admin.findAdminEntries(int firstResult, int maxResults) {
+        return entityManager().createQuery("SELECT o FROM Admin o", Admin.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
     @Transactional
-    public void Transaction.persist() {
+    public void Admin.persist() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.persist(this);
     }
     
     @Transactional
-    public void Transaction.remove() {
+    public void Admin.remove() {
         if (this.entityManager == null) this.entityManager = entityManager();
         if (this.entityManager.contains(this)) {
             this.entityManager.remove(this);
         } else {
-            Transaction attached = Transaction.findTransaction(this.id);
+            Admin attached = Admin.findAdmin(this.id_);
             this.entityManager.remove(attached);
         }
     }
     
     @Transactional
-    public void Transaction.flush() {
+    public void Admin.flush() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.flush();
     }
     
     @Transactional
-    public void Transaction.clear() {
+    public void Admin.clear() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.clear();
     }
     
     @Transactional
-    public Transaction Transaction.merge() {
+    public Admin Admin.merge() {
         if (this.entityManager == null) this.entityManager = entityManager();
-        Transaction merged = this.entityManager.merge(this);
+        Admin merged = this.entityManager.merge(this);
         this.entityManager.flush();
         return merged;
     }

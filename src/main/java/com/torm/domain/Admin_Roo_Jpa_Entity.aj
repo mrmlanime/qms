@@ -3,7 +3,7 @@
 
 package com.torm.domain;
 
-import com.torm.domain.Transaction;
+import com.torm.domain.Admin;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,32 +11,32 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Version;
 
-privileged aspect Transaction_Roo_Jpa_Entity {
+privileged aspect Admin_Roo_Jpa_Entity {
     
-    declare @type: Transaction: @Entity;
+    declare @type: Admin: @Entity;
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
-    private Long Transaction.id;
+    @Column(name = "id_")
+    private Long Admin.id_;
     
     @Version
     @Column(name = "version")
-    private Integer Transaction.version;
+    private Integer Admin.version;
     
-    public Long Transaction.getId() {
-        return this.id;
+    public Long Admin.getId_() {
+        return this.id_;
     }
     
-    public void Transaction.setId(Long id) {
-        this.id = id;
+    public void Admin.setId_(Long id) {
+        this.id_ = id;
     }
     
-    public Integer Transaction.getVersion() {
+    public Integer Admin.getVersion() {
         return this.version;
     }
     
-    public void Transaction.setVersion(Integer version) {
+    public void Admin.setVersion(Integer version) {
         this.version = version;
     }
     

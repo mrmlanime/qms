@@ -3,13 +3,13 @@
 
 package com.torm.domain;
 
-import com.torm.domain.User;
+import com.torm.domain.Visitor;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
-privileged aspect User_Roo_ToString {
+privileged aspect Visitor_Roo_ToString {
     
-    public String User.toString() {
+    public String Visitor.toString() {
         return ReflectionToStringBuilder.toString(this, ToStringStyle.SHORT_PREFIX_STYLE);
     }
     

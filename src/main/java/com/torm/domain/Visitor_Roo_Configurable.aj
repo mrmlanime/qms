@@ -3,11 +3,11 @@
 
 package com.torm.domain;
 
-import com.torm.domain.Transaction;
+import com.torm.domain.Visitor;
 import org.springframework.beans.factory.annotation.Configurable;
 
-privileged aspect Transaction_Roo_Configurable {
+privileged aspect Visitor_Roo_Configurable {
     
-    declare @type: Transaction: @Configurable;
+    declare @type: Visitor: @Configurable;
     
 }

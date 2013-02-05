@@ -5,7 +5,6 @@ package com.torm.controller;
 
 import com.torm.controller.ApplicationConversionServiceFactoryBean;
 import com.torm.domain.Staff;
-import com.torm.domain.Visitor;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.format.FormatterRegistry;
@@ -17,7 +16,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Staff, String> ApplicationConversionServiceFactoryBean.getStaffToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<com.torm.domain.Staff, java.lang.String>() {
             public String convert(Staff staff) {
-                return new StringBuilder().append(staff.getFirstName()).append(' ').append(staff.getMiddleName()).append(' ').append(staff.getLastName()).toString();
+                return new StringBuilder().append(staff.getUserName()).append(' ').append(staff.getPassword()).append(' ').append(staff.getFirstName()).append(' ').append(staff.getMiddleName()).toString();
             }
         };
     }
@@ -38,37 +37,10 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         };
     }
     
-    public Converter<Visitor, String> ApplicationConversionServiceFactoryBean.getVisitorToStringConverter() {
-        return new org.springframework.core.convert.converter.Converter<com.torm.domain.Visitor, java.lang.String>() {
-            public String convert(Visitor visitor) {
-                return new StringBuilder().append(visitor.getFirstName()).append(' ').append(visitor.getMiddleName()).append(' ').append(visitor.getLastName()).toString();
-            }
-        };
-    }
-    
-    public Converter<Long, Visitor> ApplicationConversionServiceFactoryBean.getIdToVisitorConverter() {
-        return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.torm.domain.Visitor>() {
-            public com.torm.domain.Visitor convert(java.lang.Long id) {
-                return Visitor.findVisitor(id);
-            }
-        };
-    }
-    
-    public Converter<String, Visitor> ApplicationConversionServiceFactoryBean.getStringToVisitorConverter() {
-        return new org.springframework.core.convert.converter.Converter<java.lang.String, com.torm.domain.Visitor>() {
-            public com.torm.domain.Visitor convert(String id) {
-                return getObject().convert(getObject().convert(id, Long.class), Visitor.class);
-            }
-        };
-    }
-    
     public void ApplicationConversionServiceFactoryBean.installLabelConverters(FormatterRegistry registry) {
         registry.addConverter(getStaffToStringConverter());
         registry.addConverter(getIdToStaffConverter());
         registry.addConverter(getStringToStaffConverter());
-        registry.addConverter(getVisitorToStringConverter());
-        registry.addConverter(getIdToVisitorConverter());
-        registry.addConverter(getStringToVisitorConverter());
     }
     
     public void ApplicationConversionServiceFactoryBean.afterPropertiesSet() {

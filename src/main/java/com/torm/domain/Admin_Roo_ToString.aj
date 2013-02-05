@@ -3,13 +3,13 @@
 
 package com.torm.domain;
 
-import com.torm.domain.Transaction;
+import com.torm.domain.Admin;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
-privileged aspect Transaction_Roo_ToString {
+privileged aspect Admin_Roo_ToString {
     
-    public String Transaction.toString() {
+    public String Admin.toString() {
         return ReflectionToStringBuilder.toString(this, ToStringStyle.SHORT_PREFIX_STYLE);
     }
     

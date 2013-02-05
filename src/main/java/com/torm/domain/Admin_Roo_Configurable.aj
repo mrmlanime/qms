@@ -3,11 +3,11 @@
 
 package com.torm.domain;
 
-import com.torm.domain.User;
+import com.torm.domain.Admin;
 import org.springframework.beans.factory.annotation.Configurable;
 
-privileged aspect User_Roo_Configurable {
+privileged aspect Admin_Roo_Configurable {
     
-    declare @type: User: @Configurable;
+    declare @type: Admin: @Configurable;
     
 }
