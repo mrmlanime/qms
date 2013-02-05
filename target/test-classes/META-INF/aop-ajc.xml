@@ -1,9 +1,0 @@
-<aspectj>
-<aspects>
-<aspect name="com.onb.qms.domain.VisitorIntegrationTest_Roo_IntegrationTest"/>
-<aspect name="com.onb.qms.domain.VisitorDataOnDemand_Roo_DataOnDemand"/>
-<aspect name="com.onb.qms.domain.VisitorDataOnDemand_Roo_Configurable"/>
-<aspect name="com.onb.qms.domain.VisitorIntegrationTest_Roo_Configurable"/>
-</aspects>
-</aspectj>
-
