@@ -6,7 +6,6 @@ package com.onb.qms.domain;
 import com.onb.qms.domain.VisitorDataOnDemand;
 import com.onb.qms.domain.VisitorIntegrationTest;
 import com.torm.domain.Visitor;
-
 import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;

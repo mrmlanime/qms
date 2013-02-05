@@ -38,3 +38,4 @@ field string --fieldName middleName
 field string --fieldName lastName --notNull 
 exit
 // Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-02-04 18:11:52
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-02-05 15:14:45

@@ -4,7 +4,6 @@
 package com.torm.domain;
 
 import com.torm.domain.Visitor;
-
 import org.springframework.beans.factory.annotation.Configurable;
 
 privileged aspect Visitor_Roo_Configurable {

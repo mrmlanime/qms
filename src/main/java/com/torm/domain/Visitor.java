@@ -18,4 +18,5 @@ public class Visitor {
     @NotNull
     private String lastName;
     
+    private Staff staff;
 }

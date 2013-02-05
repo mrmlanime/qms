@@ -4,8 +4,8 @@
 package com.torm.controller;
 
 import com.torm.controller.VisitorController;
+import com.torm.domain.Staff;
 import com.torm.domain.Visitor;
-
 import java.io.UnsupportedEncodingException;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
@@ -87,6 +87,7 @@ privileged aspect VisitorController_Roo_Controller {
     
     void VisitorController.populateEditForm(Model uiModel, Visitor visitor) {
         uiModel.addAttribute("visitor", visitor);
+        uiModel.addAttribute("staffs", Staff.findAllStaffs());
     }
     
     String VisitorController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

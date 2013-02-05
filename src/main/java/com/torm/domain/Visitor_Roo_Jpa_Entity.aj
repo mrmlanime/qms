@@ -4,7 +4,6 @@
 package com.torm.domain;
 
 import com.torm.domain.Visitor;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

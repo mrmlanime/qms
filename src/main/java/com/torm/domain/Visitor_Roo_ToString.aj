@@ -4,7 +4,6 @@
 package com.torm.domain;
 
 import com.torm.domain.Visitor;
-
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 

@@ -5,7 +5,6 @@ package com.torm.controller;
 
 import com.torm.controller.ApplicationConversionServiceFactoryBean;
 import com.torm.domain.Visitor;
-
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.format.FormatterRegistry;
@@ -17,7 +16,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Visitor, String> ApplicationConversionServiceFactoryBean.getVisitorToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<com.torm.domain.Visitor, java.lang.String>() {
             public String convert(Visitor visitor) {
-                return "(no displayable fields)";
+                return new StringBuilder().append(visitor.getFirstName()).append(' ').append(visitor.getMiddleName()).append(' ').append(visitor.getLastName()).toString();
             }
         };
     }

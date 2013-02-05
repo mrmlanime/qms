@@ -4,8 +4,8 @@
 package com.onb.qms.domain;
 
 import com.onb.qms.domain.VisitorDataOnDemand;
+import com.torm.domain.Staff;
 import com.torm.domain.Visitor;
-
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -28,6 +28,7 @@ privileged aspect VisitorDataOnDemand_Roo_DataOnDemand {
         setFirstName(obj, index);
         setLastName(obj, index);
         setMiddleName(obj, index);
+        setStaff(obj, index);
         return obj;
     }
     
@@ -44,6 +45,11 @@ privileged aspect VisitorDataOnDemand_Roo_DataOnDemand {
     public void VisitorDataOnDemand.setMiddleName(Visitor obj, int index) {
         String middleName = "middleName_" + index;
         obj.setMiddleName(middleName);
+    }
+    
+    public void VisitorDataOnDemand.setStaff(Visitor obj, int index) {
+        Staff staff = null;
+        obj.setStaff(staff);
     }
     
     public Visitor VisitorDataOnDemand.getSpecificVisitor(int index) {

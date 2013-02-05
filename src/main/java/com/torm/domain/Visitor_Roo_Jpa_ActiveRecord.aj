@@ -4,7 +4,6 @@
 package com.torm.domain;
 
 import com.torm.domain.Visitor;
-
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
