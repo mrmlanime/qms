@@ -4,6 +4,7 @@
 package com.torm.controller;
 
 import com.torm.controller.ApplicationConversionServiceFactoryBean;
+import com.torm.domain.Staff;
 import com.torm.domain.Visitor;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.core.convert.converter.Converter;
@@ -12,6 +13,30 @@ import org.springframework.format.FormatterRegistry;
 privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService {
     
     declare @type: ApplicationConversionServiceFactoryBean: @Configurable;
+    
+    public Converter<Staff, String> ApplicationConversionServiceFactoryBean.getStaffToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<com.torm.domain.Staff, java.lang.String>() {
+            public String convert(Staff staff) {
+                return new StringBuilder().append(staff.getFirstName()).append(' ').append(staff.getMiddleName()).append(' ').append(staff.getLastName()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, Staff> ApplicationConversionServiceFactoryBean.getIdToStaffConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.torm.domain.Staff>() {
+            public com.torm.domain.Staff convert(java.lang.Long id) {
+                return Staff.findStaff(id);
+            }
+        };
+    }
+    
+    public Converter<String, Staff> ApplicationConversionServiceFactoryBean.getStringToStaffConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, com.torm.domain.Staff>() {
+            public com.torm.domain.Staff convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), Staff.class);
+            }
+        };
+    }
     
     public Converter<Visitor, String> ApplicationConversionServiceFactoryBean.getVisitorToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<com.torm.domain.Visitor, java.lang.String>() {
@@ -38,6 +63,9 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     }
     
     public void ApplicationConversionServiceFactoryBean.installLabelConverters(FormatterRegistry registry) {
+        registry.addConverter(getStaffToStringConverter());
+        registry.addConverter(getIdToStaffConverter());
+        registry.addConverter(getStringToStaffConverter());
         registry.addConverter(getVisitorToStringConverter());
         registry.addConverter(getIdToVisitorConverter());
         registry.addConverter(getStringToVisitorConverter());
