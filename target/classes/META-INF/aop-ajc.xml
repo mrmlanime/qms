@@ -1,0 +1,12 @@
+<aspectj>
+<aspects>
+<aspect name="com.torm.controller.ApplicationConversionServiceFactoryBean_Roo_ConversionService"/>
+<aspect name="com.torm.domain.Visitor_Roo_Configurable"/>
+<aspect name="com.torm.controller.VisitorController_Roo_Controller"/>
+<aspect name="com.torm.domain.Visitor_Roo_Jpa_Entity"/>
+<aspect name="com.torm.domain.Visitor_Roo_ToString"/>
+<aspect name="com.torm.domain.Visitor_Roo_Jpa_ActiveRecord"/>
+<aspect name="com.torm.domain.Visitor_Roo_JavaBean"/>
+</aspects>
+</aspectj>
+

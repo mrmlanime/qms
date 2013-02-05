@@ -1,0 +1,40 @@
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-02-04 16:19:05
+hint
+project --topLevelPackage com.onb.qms --projectName qms
+hint
+jpa setup --provider HIBERNATE --database MYSQL --databaseName qms --userName root --password root 
+hint
+entity jpa --class ~.domain.Visitor --testAutomatically 
+field string --fieldName firstName --notNull
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-02-04 16:38:42
+hint
+hint fields
+entity jpa --class ~.domain.Visitor --testAutomatically 
+field string --fieldName middleName
+field string --fieldName lastName --notNull 
+hint web mvc
+web mvc setup
+web mvc all --package ~.controller
+quit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-02-04 16:41:52
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-02-04 17:29:39
+exit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-02-04 17:29:47
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2013-02-04 17:40:24
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-02-04 18:01:33
+entity jpa --class ~.domain.Visitor --testAutomatically 
+field string --fieldName firstName --notNull 
+exit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-02-04 18:02:10
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-02-04 18:08:25
+hint
+hint fields
+field string --class ~.domain.Visitor --fieldName middleName 
+field string --class ~.domain.Visitor --fieldName lastName --notNull 
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-02-04 18:11:05
+entity jpa --class ~.domain.Visitor --testAutomatically 
+field string --fieldName firstName --notNull 
+field string --fieldName middleName 
+field string --fieldName lastName --notNull 
+exit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-02-04 18:11:52
