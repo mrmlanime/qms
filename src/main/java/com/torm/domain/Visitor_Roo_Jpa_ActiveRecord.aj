@@ -3,73 +3,73 @@
 
 package com.torm.domain;
 
-import com.torm.domain.User;
+import com.torm.domain.Visitor;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import org.springframework.transaction.annotation.Transactional;
 
-privileged aspect User_Roo_Jpa_ActiveRecord {
+privileged aspect Visitor_Roo_Jpa_ActiveRecord {
     
     @PersistenceContext
-    transient EntityManager User.entityManager;
+    transient EntityManager Visitor.entityManager;
     
-    public static final EntityManager User.entityManager() {
-        EntityManager em = new User().entityManager;
+    public static final EntityManager Visitor.entityManager() {
+        EntityManager em = new Visitor().entityManager;
         if (em == null) throw new IllegalStateException("Entity manager has not been injected (is the Spring Aspects JAR configured as an AJC/AJDT aspects library?)");
         return em;
     }
     
-    public static long User.countUsers() {
-        return entityManager().createQuery("SELECT COUNT(o) FROM User o", Long.class).getSingleResult();
+    public static long Visitor.countVisitors() {
+        return entityManager().createQuery("SELECT COUNT(o) FROM Visitor o", Long.class).getSingleResult();
     }
     
-    public static List<User> User.findAllUsers() {
-        return entityManager().createQuery("SELECT o FROM User o", User.class).getResultList();
+    public static List<Visitor> Visitor.findAllVisitors() {
+        return entityManager().createQuery("SELECT o FROM Visitor o", Visitor.class).getResultList();
     }
     
-    public static User User.findUser(Long id_) {
-        if (id_ == null) return null;
-        return entityManager().find(User.class, id_);
+    public static Visitor Visitor.findVisitor(Long id) {
+        if (id == null) return null;
+        return entityManager().find(Visitor.class, id);
     }
     
-    public static List<User> User.findUserEntries(int firstResult, int maxResults) {
-        return entityManager().createQuery("SELECT o FROM User o", User.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+    public static List<Visitor> Visitor.findVisitorEntries(int firstResult, int maxResults) {
+        return entityManager().createQuery("SELECT o FROM Visitor o", Visitor.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
     @Transactional
-    public void User.persist() {
+    public void Visitor.persist() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.persist(this);
     }
     
     @Transactional
-    public void User.remove() {
+    public void Visitor.remove() {
         if (this.entityManager == null) this.entityManager = entityManager();
         if (this.entityManager.contains(this)) {
             this.entityManager.remove(this);
         } else {
-            User attached = User.findUser(this.id_);
+            Visitor attached = Visitor.findVisitor(this.id);
             this.entityManager.remove(attached);
         }
     }
     
     @Transactional
-    public void User.flush() {
+    public void Visitor.flush() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.flush();
     }
     
     @Transactional
-    public void User.clear() {
+    public void Visitor.clear() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.clear();
     }
     
     @Transactional
-    public User User.merge() {
+    public Visitor Visitor.merge() {
         if (this.entityManager == null) this.entityManager = entityManager();
-        User merged = this.entityManager.merge(this);
+        Visitor merged = this.entityManager.merge(this);
         this.entityManager.flush();
         return merged;
     }

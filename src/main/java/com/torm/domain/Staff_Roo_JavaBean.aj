@@ -7,6 +7,22 @@ import com.torm.domain.Staff;
 
 privileged aspect Staff_Roo_JavaBean {
     
+    public String Staff.getUserName() {
+        return this.userName;
+    }
+    
+    public void Staff.setUserName(String userName) {
+        this.userName = userName;
+    }
+    
+    public String Staff.getPassword() {
+        return this.password;
+    }
+    
+    public void Staff.setPassword(String password) {
+        this.password = password;
+    }
+    
     public String Staff.getFirstName() {
         return this.firstName;
     }

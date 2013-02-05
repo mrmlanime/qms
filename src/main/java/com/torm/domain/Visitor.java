@@ -9,18 +9,20 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooJavaBean
 @RooToString
 @RooJpaActiveRecord
-public class User {
+public class Visitor {
 
 	@NotNull
-	private long id;
+	private long requestNumber;
 	
 	@NotNull
-	private String username;
+	private String firstName;
 	
 	@NotNull
-	private String password;
+	private String lastName;
 	
-	@NotNull
+	
 	private Staff staff;
 	
+	@NotNull
+	private String purpose;
 }

@@ -11,6 +11,12 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooJpaActiveRecord
 public class Staff {
 
+	@NotNull
+	private String userName;
+	
+	@NotNull
+	private String password;
+	
     @NotNull
     private String firstName;
 

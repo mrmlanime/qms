@@ -4,47 +4,47 @@
 package com.torm.domain;
 
 import com.torm.domain.Staff;
-import com.torm.domain.Transaction;
+import com.torm.domain.Visitor;
 
-privileged aspect Transaction_Roo_JavaBean {
+privileged aspect Visitor_Roo_JavaBean {
     
-    public long Transaction.getRequestNumber() {
+    public long Visitor.getRequestNumber() {
         return this.requestNumber;
     }
     
-    public void Transaction.setRequestNumber(long requestNumber) {
+    public void Visitor.setRequestNumber(long requestNumber) {
         this.requestNumber = requestNumber;
     }
     
-    public String Transaction.getFirstName() {
+    public String Visitor.getFirstName() {
         return this.firstName;
     }
     
-    public void Transaction.setFirstName(String firstName) {
+    public void Visitor.setFirstName(String firstName) {
         this.firstName = firstName;
     }
     
-    public String Transaction.getLastName() {
+    public String Visitor.getLastName() {
         return this.lastName;
     }
     
-    public void Transaction.setLastName(String lastName) {
+    public void Visitor.setLastName(String lastName) {
         this.lastName = lastName;
     }
     
-    public Staff Transaction.getStaff() {
+    public Staff Visitor.getStaff() {
         return this.staff;
     }
     
-    public void Transaction.setStaff(Staff staff) {
+    public void Visitor.setStaff(Staff staff) {
         this.staff = staff;
     }
     
-    public String Transaction.getPurpose() {
+    public String Visitor.getPurpose() {
         return this.purpose;
     }
     
-    public void Transaction.setPurpose(String purpose) {
+    public void Visitor.setPurpose(String purpose) {
         this.purpose = purpose;
     }
     

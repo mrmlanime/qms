@@ -9,20 +9,24 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooJavaBean
 @RooToString
 @RooJpaActiveRecord
-public class Transaction {
+public class Admin {
 
 	@NotNull
-	private long requestNumber;
+	private long id;
+	
+	@NotNull
+	private String username;
+	
+	@NotNull
+	private String password;
 	
 	@NotNull
 	private String firstName;
 	
 	@NotNull
-	private String lastName;
-	
-	
-	private Staff staff;
+	private String middleName;
 	
 	@NotNull
-	private String purpose;
+	private String lastName;
+	
 }

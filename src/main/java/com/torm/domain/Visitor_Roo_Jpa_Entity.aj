@@ -3,7 +3,7 @@
 
 package com.torm.domain;
 
-import com.torm.domain.User;
+import com.torm.domain.Visitor;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,32 +11,32 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Version;
 
-privileged aspect User_Roo_Jpa_Entity {
+privileged aspect Visitor_Roo_Jpa_Entity {
     
-    declare @type: User: @Entity;
+    declare @type: Visitor: @Entity;
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id_")
-    private Long User.id_;
+    @Column(name = "id")
+    private Long Visitor.id;
     
     @Version
     @Column(name = "version")
-    private Integer User.version;
+    private Integer Visitor.version;
     
-    public Long User.getId_() {
-        return this.id_;
+    public Long Visitor.getId() {
+        return this.id;
     }
     
-    public void User.setId_(Long id) {
-        this.id_ = id;
+    public void Visitor.setId(Long id) {
+        this.id = id;
     }
     
-    public Integer User.getVersion() {
+    public Integer Visitor.getVersion() {
         return this.version;
     }
     
-    public void User.setVersion(Integer version) {
+    public void Visitor.setVersion(Integer version) {
         this.version = version;
     }
     
