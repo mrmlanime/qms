@@ -4,6 +4,8 @@
 package com.torm.domain;
 
 import com.torm.domain.Staff;
+import com.torm.domain.Visitor;
+import java.util.Set;
 
 privileged aspect Staff_Roo_JavaBean {
     
@@ -45,6 +47,14 @@ privileged aspect Staff_Roo_JavaBean {
     
     public void Staff.setLastName(String lastName) {
         this.lastName = lastName;
+    }
+    
+    public Set<Visitor> Staff.getVisitors() {
+        return this.visitors;
+    }
+    
+    public void Staff.setVisitors(Set<Visitor> visitors) {
+        this.visitors = visitors;
     }
     
 }

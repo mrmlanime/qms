@@ -32,20 +32,20 @@ privileged aspect Visitor_Roo_JavaBean {
         this.lastName = lastName;
     }
     
-    public Staff Visitor.getStaff() {
-        return this.staff;
-    }
-    
-    public void Visitor.setStaff(Staff staff) {
-        this.staff = staff;
-    }
-    
     public String Visitor.getPurpose() {
         return this.purpose;
     }
     
     public void Visitor.setPurpose(String purpose) {
         this.purpose = purpose;
+    }
+    
+    public Staff Visitor.getStaff() {
+        return this.staff;
+    }
+    
+    public void Visitor.setStaff(Staff staff) {
+        this.staff = staff;
     }
     
 }
