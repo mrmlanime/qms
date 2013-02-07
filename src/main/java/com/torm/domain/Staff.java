@@ -1,5 +1,8 @@
 package com.torm.domain;
 
+import java.util.Set;
+
+import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
@@ -28,4 +31,7 @@ public class Staff {
     @NotNull
     @Pattern(regexp="[A-Za-z]", message="Invalid Last Name")
     private String lastName;
+    
+    @OneToMany
+    private Set<Visitor> visitors;
 }
