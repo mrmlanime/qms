@@ -1,7 +1,8 @@
 package com.torm.domain;
 
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
@@ -12,20 +13,20 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooJpaActiveRecord
 public class Visitor {
 
-	@NotNull
 	private long requestNumber;
 	
 	@NotNull
-	@Pattern(regexp="[A-Za-z]", message="Invalid First Name")
+	@Size(min=1)
 	private String firstName;
 	
 	@NotNull
-	@Pattern(regexp="[A-Za-z]", message="Invalid Last Name")
+	@Size(min=1)
 	private String lastName;
 	
-	
-	private Staff staff;
-	
 	@NotNull
+	@Size(min=1)
 	private String purpose;
+	
+	@ManyToOne
+	private Staff staff;
 }
