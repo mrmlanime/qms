@@ -7,6 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-${requestNumber.id }
+Thank You
+<br />
+${visitor.firstName } ${visitor.lastName } 
+<br />
+<br />
+You will be serve by
+${visitor.staff.firstName } ${visitor.staff.lastName }
 </body>
 </html>
