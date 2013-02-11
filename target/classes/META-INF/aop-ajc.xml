@@ -1,0 +1,18 @@
+<aspectj>
+<aspects>
+<aspect name="com.torm.domain.User_Roo_DbManaged"/>
+<aspect name="com.torm.domain.Usertype_Roo_Jpa_Entity"/>
+<aspect name="com.torm.domain.Usertype_Roo_Configurable"/>
+<aspect name="com.torm.domain.Usertype_Roo_ToString"/>
+<aspect name="com.torm.domain.User_Roo_ToString"/>
+<aspect name="com.torm.controller.UserController_Roo_Controller"/>
+<aspect name="com.torm.controller.ApplicationConversionServiceFactoryBean_Roo_ConversionService"/>
+<aspect name="com.torm.domain.Usertype_Roo_DbManaged"/>
+<aspect name="com.torm.domain.User_Roo_Configurable"/>
+<aspect name="com.torm.domain.User_Roo_Jpa_ActiveRecord"/>
+<aspect name="com.torm.domain.User_Roo_Jpa_Entity"/>
+<aspect name="com.torm.domain.Usertype_Roo_Jpa_ActiveRecord"/>
+<aspect name="com.torm.controller.UsertypeController_Roo_Controller"/>
+</aspects>
+</aspectj>
+
