@@ -24,15 +24,12 @@ public class VisitorController {
 		return "visitor/create";
 	}
 	
-	@SuppressWarnings("static-access")
+	
 	@RequestMapping(value="/visitor/create", method=RequestMethod.POST)
 	public String createRequest(@ModelAttribute("visitor") Visitor visitor, Model model){
-		System.out.println(visitor.getFirstName() + "-" + visitor.getStaff());
+		visitor.setStatus("waiting");
 		visitor.persist();
-		Visitor visit = new Visitor();
-		model.addAttribute("requestNumber", visit.findVisitor(1L));
+		model.addAttribute("visitor", visitor);
 		return "visitor/display";
 	}
-	
-	
 }
