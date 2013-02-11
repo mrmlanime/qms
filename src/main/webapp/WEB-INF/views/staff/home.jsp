@@ -18,8 +18,7 @@
 		<c:otherwise>
 			<p>Name : ${visitor.firstName } ${visitor.lastName }</p>
 			<p><a href="serve/${visitor.id }">Serve</a></p>
-			<p><a>Transfer</a></p>
-			<input type="submit" value="Transfer" name="submit" onclick=""/>
+			<p><a href="/qms/staff/transfer/${visitor.id }">Transfer</a></p>
 		</c:otherwise>
 	</c:choose>
 </body>
