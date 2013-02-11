@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_com_torm_domain_Usertype" modelAttribute="usertype" path="/usertypes" versionField="none" z="cyaZmsFC3+X3fLSaaotlqnK7l7k=">
+        <field:simple field="users" id="c_com_torm_domain_Usertype_users" messageCode="entity_reference_not_managed" messageCodeAttribute="User" z="MVQhAHDsJ0fQFIrf/BXeP3Gvt1U="/>
+        <field:input field="name" id="c_com_torm_domain_Usertype_name" z="aa2En7N9JJdrC+Q0BEsWErv0qCA="/>
+    </form:update>
+</div>
