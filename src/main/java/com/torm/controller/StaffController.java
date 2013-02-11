@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -47,8 +48,22 @@ public class StaffController {
 		return "staff/home";
 	}
 	
-	@RequestMapping(value = "/staff/transfer", method = RequestMethod.GET)
-	public String transfer(){
+	@RequestMapping(value = "/staff/transferVisitor/{id}", method = RequestMethod.POST)
+	public String transfer(@PathVariable("id") long id, @ModelAttribute("visitor") Visitor visitor,Model model){
+		Visitor visit = Visitor.findVisitor(id);
+		visit.setId(id);
+		visit.setStaff(visitor.getStaff());
+		visit.setStatus("waiting");
+		visit.merge();
+		List<Visitor> visitors = Visitor.findVisitorsByStaffAndStatus(Staff.findStaff(1L), "waiting").getResultList();
+		model.addAttribute("visitor", Visitor.findVisitor(visitors.get(0).getId()));
 		return "staff/home";
+	}
+	
+	@RequestMapping(value = "/staff/transfer/{id}", method = RequestMethod.GET)
+	public String transferForm(@PathVariable("id") long id, @ModelAttribute("visitor") Visitor visitor,Model model){
+		model.addAttribute("staffList", Staff.findAllStaffs());
+		model.addAttribute("visitor", Visitor.findVisitor(id));
+		return "staff/transfer";
 	}
 }
