@@ -13,11 +13,11 @@
 		<c:when test="${service eq 'serve' }">
 			<p>Name : ${visitor.firstName } ${visitor.lastName }</p>
 			<p>Purpose : ${visitor.purpose }</p>
-			<a href="../../staff/done">Done</a>
+			<a href="/qms/staff/done">Done</a>
 		</c:when>
 		<c:otherwise>
 			<p>Name : ${visitor.firstName } ${visitor.lastName }</p>
-			<p><a href="serve/${visitor.id }">Serve</a></p>
+			<p><a href="/qms/staff/serve/${visitor.id }">Serve</a></p>
 			<p><a href="/qms/staff/transfer/${visitor.id }">Transfer</a></p>
 		</c:otherwise>
 	</c:choose>
