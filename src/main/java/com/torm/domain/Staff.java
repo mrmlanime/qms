@@ -8,10 +8,8 @@ import javax.validation.constraints.Pattern;
 
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
-import org.springframework.roo.addon.tostring.RooToString;
 
 @RooJavaBean
-@RooToString
 @RooJpaActiveRecord
 public class Staff {
 
@@ -34,4 +32,9 @@ public class Staff {
     
     @OneToMany
     private Set<Visitor> visitors;
+
+	@Override
+	public String toString() {
+		return firstName + " " + middleName + " " + lastName;
+	}
 }

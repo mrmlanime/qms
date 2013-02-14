@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<a href="visitor/add">Login</a>
+	<a href="visitor/add">Visitor Request</a>
+	<a href="staff/queue">Staff</a>
 </body>
 </html>
