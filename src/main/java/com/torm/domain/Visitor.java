@@ -1,5 +1,7 @@
 package com.torm.domain;
 
+import java.sql.Time;
+
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -30,4 +32,8 @@ public class Visitor {
     private Staff staff;
 
     private String status;
+    
+    private Time startTimeServed;
+    
+    private Time endTimeServed;
 }
