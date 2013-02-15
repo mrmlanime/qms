@@ -11,3 +11,5 @@
 /.settings/org.eclipse.wst.jsdt.ui.superType.name
 /log.roo
 /target/*
+/.springBeans
+/qms
