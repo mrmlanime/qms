@@ -30,6 +30,8 @@ public class Staff {
     @Pattern(regexp="[A-Za-z]", message="Invalid Last Name")
     private String lastName;
     
+    private String status;
+    
     @OneToMany
     private Set<Visitor> visitors;
 
