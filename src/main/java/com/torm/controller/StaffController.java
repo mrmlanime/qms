@@ -1,5 +1,8 @@
 package com.torm.controller;
 
+import java.sql.Time;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
@@ -28,9 +31,16 @@ public class StaffController {
 		return "staff/home";
 	}
 	
-	@RequestMapping(value = "/staff/done", method = RequestMethod.GET)
-	public String done(Model model) {
+	@RequestMapping(value = "/staff/done/{id}", method = RequestMethod.GET)
+	public String done(@PathVariable("id") long id, Model model) {
+		Calendar cal = Calendar.getInstance();
+    	cal.getTime();
+    	SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+		String endTime = sdf.format(cal.getTime());
 		
+		Visitor visitor = Visitor.findVisitor(id);
+		visitor.setEndTimeServed(Time.valueOf(endTime));
+		visitor.merge();
 		List<Visitor> visitors = Visitor.findVisitorsByStaffAndStatus(Staff.findStaff(1L), "waiting").getResultList();
 		model.addAttribute("visitor", Visitor.findVisitor(visitors.get(0).getId()));
 		return "staff/home";
@@ -38,8 +48,13 @@ public class StaffController {
 	
 	@RequestMapping(value = "/staff/serve/{id}", method = RequestMethod.GET)
 	public String serve(@PathVariable("id") long id, Model model) {
+		Calendar cal = Calendar.getInstance();
+    	cal.getTime();
+    	SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+		String startTime = sdf.format(cal.getTime());
 		Visitor visitor = Visitor.findVisitor(id);
 		visitor.setStatus("served");
+		visitor.setStartTimeServed(Time.valueOf(startTime));
 		visitor.merge();
 		
 		model.addAttribute("visitor", Visitor.findVisitor(id));
