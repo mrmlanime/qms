@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_torm_domain_Staff" items="${staffs}" z="t60BYo0nVntgN9FJ1Tlx6MP3DK4=">
+        <table:table data="${staffs}" id="l_com_torm_domain_Staff" path="/staff" z="L0g6ojGiJmLbcA+F4Gi+WxSkad8=">
+<<<<<<< HEAD
+=======
+            <table:column id="c_com_torm_domain_Staff_userName" property="userName" z="bT7LfYE156WcgcVsQWeEFhvRy3w="/>
+            <table:column id="c_com_torm_domain_Staff_password" property="password" z="WeQKLG6dFglW1nK2fToz5KFu+kA="/>
+>>>>>>> rodel
+            <table:column id="c_com_torm_domain_Staff_firstName" property="firstName" z="9ALnURah/0myvHKl8nt3g5O5cg8="/>
+            <table:column id="c_com_torm_domain_Staff_middleName" property="middleName" z="J/Bjo8w2ElFIuG0W4NASWGn9n/0="/>
+            <table:column id="c_com_torm_domain_Staff_lastName" property="lastName" z="RO4TuxECvVmqgyye5ajoxKuhVkc="/>
+        </table:table>
+    </page:list>
+</div>

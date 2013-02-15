@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_torm_domain_Admin" object="${admin}" path="/admins" z="MF7ojDVKiSYg1ItzGSImtE0hiKU=">
+        <field:display field="id" id="s_com_torm_domain_Admin_id" object="${admin}" z="BtjusaH6bnkWFgExKUj3vaFlBZI="/>
+        <field:display field="username" id="s_com_torm_domain_Admin_username" object="${admin}" z="xOu4uRTA/Bi6OYIslTuKkExFhfQ="/>
+        <field:display field="password" id="s_com_torm_domain_Admin_password" object="${admin}" z="QVkjpX7q05Fpeb9IDjTxZVWhP+s="/>
+        <field:display field="firstName" id="s_com_torm_domain_Admin_firstName" object="${admin}" z="AiX6rjufOsDprwZD8FUpP4ljkmk="/>
+        <field:display field="middleName" id="s_com_torm_domain_Admin_middleName" object="${admin}" z="2pkYkKWbArP8dkTHuEHhWvQVFgU="/>
+        <field:display field="lastName" id="s_com_torm_domain_Admin_lastName" object="${admin}" z="/f+2MZnpNUD9mMCGoffvrXASqfY="/>
+    </page:show>
+</div>
