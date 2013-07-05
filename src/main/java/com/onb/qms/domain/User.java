@@ -10,4 +10,5 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooJpaActiveRecord(versionField = "", table = "user")
 @RooDbManaged(automaticallyDelete = true)
 public class User {
+  /*** User Class Here ****/
 }
